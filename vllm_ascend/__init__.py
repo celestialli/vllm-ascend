@@ -29,3 +29,4 @@ def register_model():
         import vllm_ascend.patch.worker.patch_main.patch_tritonplaceholder  # noqa
     from .models import register_model
     register_model()
+
