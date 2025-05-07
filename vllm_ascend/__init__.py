@@ -16,6 +16,7 @@
 #
 
 
+
 def register():
     """Register the NPU platform."""
 
