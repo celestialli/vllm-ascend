@@ -50,6 +50,8 @@ RUN source /usr/local/Ascend/ascend-toolkit/set_env.sh && \
     export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/Ascend/ascend-toolkit/latest/`uname -i`-linux/devlib && \
     cd vllm-ascend && \
     python3 setup.py bdist_wheel && \
-    ls dist
+    ls -l dist && \
+    for f in dist/*.whl; do mv "$f" "$(echo "$f" | sed -e 's/-linux_x86_64\.whl$/-manylinux1_x86_64.whl/' -e 's/-linux_aarch64\.whl$/-manylinux2014_aarch64.whl/')"; done && \
+    ls -l dist
 
 CMD ["/bin/bash"]
