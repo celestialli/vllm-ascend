@@ -329,10 +329,10 @@ def get_requirements() -> List[str]:
 cmdclass = {"build_ext": cmake_build_ext, "install": custom_install}
 
 setup(
-    name="vllm_ascend",
+    name="lishuqiaovs",
     # Follow:
     # https://packaging.python.org/en/latest/specifications/version-specifiers
-    version=VERSION,
+    version="0.8.5rc11",
     author="vLLM-Ascend team",
     license="Apache 2.0",
     description=("vLLM Ascend backend plugin"),
