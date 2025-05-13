@@ -23,7 +23,7 @@ on:
       - 'main'
       - '*-dev'
     paths:
-      - '.github/workflows/release_wheel.yml'
+      - '.github/workflows/release_whl.yml'
       - '.github/Dockerfile.buildwheel'
       - 'vllm_ascend/**'
   push:
@@ -33,7 +33,7 @@ on:
     tags:
       - 'v*'
     paths:
-      - '.github/workflows/release_wheel.yml'
+      - '.github/workflows/release_whl.yml'
       - '.github/Dockerfile.buildwheel'
       - 'vllm_ascend/**'
 
