@@ -50,6 +50,8 @@ RUN source /usr/local/Ascend/ascend-toolkit/set_env.sh && \
     export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/Ascend/ascend-toolkit/latest/`uname -i`-linux/devlib && \
     cd vllm-ascend && \
     python3 setup.py bdist_wheel && \
-    ls dist
+    ls -l dist && \
+    chmod -R 777 dist/ && \
+    ls -l dist
 
 CMD ["/bin/bash"]

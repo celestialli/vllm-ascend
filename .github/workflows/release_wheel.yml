@@ -96,4 +96,5 @@ jobs:
       if: startsWith(github.ref, 'refs/tags/')
       run: |
         python3 -m pip install twine
+        for f in dist/*.whl; do mv "$f" "$(echo "$f" | sed -e 's/-linux_x86_64\.whl$/-manylinux1_x86_64.whl/' -e 's/-linux_aarch64\.whl$/-manylinux2014_aarch64.whl/')"; done
         python3 -m twine upload dist/* -u __token__ -p ${{ secrets.PYPI_TOKEN }}
